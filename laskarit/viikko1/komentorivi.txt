@@ -20,3 +20,5 @@ kurssit
                                     └── MaksukorttiTest.java
 
 14 directories, 5 files
+
+[link to README.md]https://github.com/jrhel/ot-harjoitustyo/blob/master/README.md
