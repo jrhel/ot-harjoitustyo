@@ -1,0 +1,50 @@
+commit d6e2cf08d498ad1364409453b58ea600d4a32d82 (HEAD -> master)
+Author: jrhel <johannes.riska@helsinki.fi>
+Date:   Tue Mar 17 19:46:22 2020 +0200
+
+    viela 22
+
+ tiedostoja/file22.txt | 0
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 1a2271f1900c0800467a7d065ea7196cad46fbb8
+Author: jrhel <johannes.riska@helsinki.fi>
+Date:   Tue Mar 17 19:45:26 2020 +0200
+
+    poista tiedosto file1 ja uudelleennime<C3><A4> tiedosto file2 tiedostoksi file22
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 9dbd4b924b242f270b12e9352deb3c867cc4af3d
+Author: jrhel <johannes.riska@helsinki.fi>
+Date:   Tue Mar 17 19:34:33 2020 +0200
+
+    file 1-3 luotu
+
+ tiedostoja/file1.txt | 0
+ tiedostoja/file2.txt | 0
+ tiedostoja/file3.txt | 0
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+
+commit 27c66e0b9c1557fe775bb6f8eecc079afb058d02
+Author: jrhel <johannes.riska@helsinki.fi>
+Date:   Tue Mar 17 17:17:57 2020 +0200
+
+    git add -p
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+
+commit 5f08a7a1d33d9c685c5db3e9d6446c6e58762e7e
+Author: jrhel <johannes.riska@helsinki.fi>
+Date:   Tue Mar 17 14:40:51 2020 +0200
+
+    sek<C3><A4> lis<C3><A4>yksi<C3><A4> ett<C3><A4> poistoja tehty
+
+ eka.txt    | 2 +-
+ kolmas.txt | 2 +-
+ 2 files changed, 2 insertions(+), 2 deletions(-)
+:
