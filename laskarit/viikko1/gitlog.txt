@@ -48,3 +48,5 @@ Date:   Tue Mar 17 14:40:51 2020 +0200
  kolmas.txt | 2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
 :
+
+!epäsynkrooni!
