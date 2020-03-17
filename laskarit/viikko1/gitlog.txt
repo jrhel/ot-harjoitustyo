@@ -28,9 +28,6 @@ Date:   Tue Mar 17 19:34:33 2020 +0200
  tiedostoja/file3.txt | 0
  3 files changed, 0 insertions(+), 0 deletions(-)
  
- 
-Link to: [README](https://github.com/jrhel/ot-harjoitustyo/blob/master/README.md)
-
 commit 27c66e0b9c1557fe775bb6f8eecc079afb058d02
 Author: jrhel <johannes.riska@helsinki.fi>
 Date:   Tue Mar 17 17:17:57 2020 +0200
@@ -51,3 +48,7 @@ Date:   Tue Mar 17 14:40:51 2020 +0200
  kolmas.txt | 2 +-
  2 files changed, 2 insertions(+), 2 deletions(-)
 :
+
+
+ 
+Link to: [README](https://github.com/jrhel/ot-harjoitustyo/blob/master/README.md)
