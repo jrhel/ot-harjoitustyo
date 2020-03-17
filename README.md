@@ -1,3 +1,3 @@
 # **README**
 
-Tama on "README.md"-tiedosto. *Tama lauseke on kurivoitu.*
+Tama on "README.md"-tiedosto. *Tama lauseke on kursivoitu.*
