@@ -21,4 +21,4 @@ kurssit
 
 14 directories, 5 files
 
-[link to README](https://github.com/jrhel/ot-harjoitustyo/blob/master/README.md)
+Link to: [README](https://github.com/jrhel/ot-harjoitustyo/blob/master/README.md)
