@@ -4,7 +4,7 @@
 
 The overall purpose of the application is to offer users a way to keep all their recipes in a single place,
 instead of having them spread out over a range of sources, including various physical cookbooks & blog posts,
-and notes with their very own secret sauces. In essence, the user experience would be a digital recipe book 
+and notes containing recipies for the users very own secret sauces. In essence, the user experience would be a digital recipe book 
 where they could keep all their favorite recipes.
 
 A digital implementation will additionally allow users to not only look up specific recipes, but the range of 
