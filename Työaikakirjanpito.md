@@ -1,5 +1,5 @@
 # Työaikakirjanpito
 
-| päivä | aika | mitä tein  |
-| :----:|:-----| :-----|
-| 21.3. | x    | Loin Maven-projektin, .gitignore-tiedoston, ja Työaikakirjanpito-tiedostan |
+| päivä | aika (h) | mitä tein  |
+| :----:|:---------| :-----|
+| 21.3. | 3        | Loin Maven-projektin, .gitignore-tiedoston, työaikakirjanpito-tiedostan, ja määrittelydokumentin |
