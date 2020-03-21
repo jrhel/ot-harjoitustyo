@@ -1,8 +1,10 @@
 # **README**
-Tama on "README.md"-tiedosto. *Tama lauseke on kursivoitu.*
+Tama on opiskeluprojekti kurssille "Ohjelmistotekniikka". Lopputulos pitäisi olla reseptitietokanta. Ja mustikkapiirakkaa. Paljon mustikkapiirakkaa!
+
+Linnki [työaikakirjanpitoon](https://github.com/jrhel/ot-harjoitustyo/blob/master/Ty%C3%B6aikakirjanpito.txt)
+
+
 
  Linkki tiedostoon [komentorivi.txt](https://github.com/jrhel/ot-harjoitustyo/blob/master/laskarit/viikko1/komentorivi.txt)
 
  Linkki tiedostoon [gitlog.txt](https://github.com/jrhel/ot-harjoitustyo/blob/master/laskarit/viikko1/gitlog.txt)
-
- Hyvää päivänjatkoa!
