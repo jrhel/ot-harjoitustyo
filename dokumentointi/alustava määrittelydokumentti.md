@@ -1,6 +1,6 @@
 # Requirements specification
 
-## Aim of the application
+## Purpose of the application
 
 The overall purpose of the application is to offer users a way to keep all their recipes in a single place,
 instead of having them spread out over a range of sources, including various physical cookbooks & blog posts,
