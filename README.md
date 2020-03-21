@@ -1,7 +1,7 @@
 # **README**
 Tama on opiskeluprojekti kurssille "Ohjelmistotekniikka". Lopputulos pitäisi olla reseptitietokanta. Ja mustikkapiirakkaa. Paljon mustikkapiirakkaa!
 
-Linnki [työaikakirjanpitoon](https://github.com/jrhel/ot-harjoitustyo/blob/master/Ty%C3%B6aikakirjanpito.txt)
+Linki [työaikakirjanpitoon](https://github.com/jrhel/ot-harjoitustyo/blob/master/Ty%C3%B6aikakirjanpito.txt)
 
 
 
