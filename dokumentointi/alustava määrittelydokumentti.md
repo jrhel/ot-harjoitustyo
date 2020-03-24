@@ -11,7 +11,7 @@ A digital implementation will additionally allow users to not only look up speci
 recipes containing specific ingredients - a useful function, e.g. for checking what you at that moment could 
 make based on the ingredients you happen to have at home.
 
-Additionally, people can deviate from original recipes. E.g. some hate garlic and leave it out, others love it
+People also tend to deviate from original recipes. E.g. some hate garlic and leave it out, others love it
 and add it to everything. Some might try vegeterian adaptations of traditional meat recipes, others need to
 adapt a recipe because of intolerance to a certain ingredient. Thus, the app strives to allow users to be able 
 to have the recipes THEY need, not just those according to someone else's instructions.
