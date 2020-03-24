@@ -37,7 +37,7 @@ TBA
 - User can list/see overview of all recipes,
 - User can search for recipes;
 	- by name,
-	- by ingredients,
+	- by ingredients.
 
 
 
