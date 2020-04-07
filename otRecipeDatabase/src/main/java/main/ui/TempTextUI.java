@@ -6,6 +6,7 @@
 package main.ui;
 
 import java.util.Scanner;
+import main.domain.Logic;
 
 /**
  *
@@ -13,10 +14,13 @@ import java.util.Scanner;
  */
 public class TempTextUI {
     
+    private Logic logic;
     private Scanner kbInput;
+    
 
     public TempTextUI(Scanner kbInput) {
         this.kbInput = kbInput;
+        logic = new Logic();
     }
     
     public void start() {
@@ -32,10 +36,23 @@ public class TempTextUI {
         while (userUndecided) {
             
             System.out.println(instructions);
+            System.out.println("Please, type a command:");
             String userCommand = kbInput.nextLine();
-            String command = userCommand.trim().toLowerCase();
+            String command = userCommand.trim().toLowerCase();            
             
+            if (command.equals("burn")) {
+                this.logic.burnDatabase();
+            } else if (command.equals("test")) {
+                this.logic.testDatabase();
+            } else if (command.equals("quit")) {
+                userUndecided = false;
+            } else {
+                System.out.println("Try again. ");
+            }
         }
         
     }
+    
+    
+    
 }
