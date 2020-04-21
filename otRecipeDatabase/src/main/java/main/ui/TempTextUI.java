@@ -8,7 +8,9 @@ package main.ui;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import main.domain.Ingredient;
 import main.domain.Logic;
+import main.domain.RecipeIngredient;
 
 /**
  *
@@ -62,14 +64,23 @@ public class TempTextUI {
                     ingredient = kbInput.nextLine();
                 }
                 
+                List<RecipeIngredient> recipeIngredients = new ArrayList<>();
                 for (String i: ingredients) {
                     String[] parts = i.split(",");
                     String ingredientName = parts[0];
                     String ingredientAmount = parts[1];
-                    logic.newRecipeIngredient(ingredientName, ingredientAmount);
+                    Ingredient newIngredient = new Ingredient(ingredientName);
+                    RecipeIngredient newRecipeIngredient = new RecipeIngredient(newIngredient, ingredientAmount);
+                    recipeIngredients.add(newRecipeIngredient);
                 }
                 
-                this.logic.newRecipe();
+                System.out.println("Please enter the instructions for the recipe:");
+                String description = kbInput.nextLine();
+                
+                System.out.println("Finally, enter e source if you wish:");
+                String source = kbInput.nextLine();
+                
+                this.logic.newRecipe(recipeName, recipeIngredients, description, source);
                 
             } else {
                 System.out.println("Try again. ");

@@ -22,7 +22,7 @@ public class Recipe {
     private String description;
     private String Source;
 
-    public Recipe(String name, List<RecipeIngredient> ingredients, String description, String Source) {
+    public Recipe(String name, List<RecipeIngredient> ingredients, String description, String source) {
         this.ingredientId = -1;
         this.name = name;
         this.ingredients = ingredients;
