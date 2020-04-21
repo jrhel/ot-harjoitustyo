@@ -30,7 +30,7 @@ TBA
 
 ## Functinality of core application
 
-- User can add new recipes,
+- User can add new recipes (Feature implemented),
 - User can "open"/see/use recipes,
 - User can edit recipes,
 - User can delete recipes,
