@@ -11,7 +11,7 @@ Tämä on opiskeluprojekti kurssilla "Ohjelmistotekniikka" Helsingin yliopistoll
 
 ## Releaset
 
-[Viikko 5]((https://github.com/jrhel/ot-harjoitustyo/releases)
+[Viikko 5](https://github.com/jrhel/ot-harjoitustyo/releases)
 
 ## Komentorivitoiminnot
 
