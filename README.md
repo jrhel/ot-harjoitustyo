@@ -8,3 +8,5 @@ Tämä on opiskeluprojekti kurssilla "Ohjelmistotekniikka" Helsingin yliopistoll
 [Arkkitehtuurikuvaus](https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
 [Työaikakirjanpito](https://github.com/jrhel/ot-harjoitustyo/blob/master/Ty%C3%B6aikakirjanpito.md)
+
+[Release viikko5](https://github.com/jrhel/ot-harjoitustyo/releases)
