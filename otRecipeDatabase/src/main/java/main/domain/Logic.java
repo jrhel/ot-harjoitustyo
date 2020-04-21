@@ -31,8 +31,9 @@ public class Logic {
         recipeIngredientDAO = new RecipeIngredientDAO();
     }
     
-    public static void newRecipe(String name, List<RecipeIngredient> ingredients, String description, String source) {        
+    public void newRecipe(String name, List<RecipeIngredient> ingredients, String description, String source) {        
         Recipe recipe = new Recipe(name, ingredients, description, source);
+        recipe.save(ingredientDAO, recipeDAO, recipeIngredientDAO);
     }
     
     // Just for temporary testing:

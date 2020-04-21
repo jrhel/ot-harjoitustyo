@@ -18,6 +18,8 @@ import static org.junit.Assert.*;
  */
 public class IngredientTest {
     
+    Ingredient blueberries;
+    
     public IngredientTest() {
     }
     
@@ -31,6 +33,7 @@ public class IngredientTest {
     
     @Before
     public void setUp() {
+         blueberries = new Ingredient("Blueberries");
     }
     
     @After
@@ -41,8 +44,7 @@ public class IngredientTest {
     // The methods must be annotated with annotation @Test. For example:
     //
     @Test
-    public void newIngredient() {
-        Ingredient blueberries = new Ingredient("Blueberries");
+    public void newIngredientName() {        
         String name = blueberries.getName();
         assertEquals("Blueberries", name);
     }
