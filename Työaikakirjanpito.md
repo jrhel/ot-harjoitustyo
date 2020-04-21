@@ -7,4 +7,8 @@
 | 31.3  | 7        | Palautin mieleeni SQL-kielen, H2:n käyttö ja miten sen saa toimimaan Javassa, ja harjoittelin tätä, ja päivitin README-tiedoston.
 | 5.4   | 4        | Testasin tietokannan luonti, tietokantatalujen luonti ja poisto, ja niiden päivittäminen h2 & jdbc:n kautta. Pohdin "SpringApplication"in käyttöönottoa, mutten päätynyt sen kannalle. Suunnittelin myös sovelluksen tietokannan.
 | 7.4   | 5        | Checkstyle on otettu käyttöön. Koodasin tietokantayhteyden ja tarvittavien tietokantataulujen olemassaolon tarkistus/luonti ennen käyttöliittymän käynnistämistä, ja alustin sovelluslogiikan metodeilla alustaa ja tyhjentää tietokannan. Jostakin syystä en saa viiteavaimia toimimaan. Todennäköisesti en ehdi ratkoa tätä tänään, ennen tämän päivän määräajan.
-| yht   | 23       |
+| 12.4  | 2        | Tietokannan uudelleensuunnittelu: Havahduin tosiasiaan että "Resepti" on itse "Aineksen" erikoistapaus, ja sen tietokantataulu edellyttää siksi vierasavaimen aineksen tietokantatauluun. Loin teitokantataulut.
+| 16.4  | 3        | Palautin mieleeni DAO-suunnittelumallin, loin DAO-rajapinnan ja tietokantatauluille omat DAO-oliot, ja oliot niiden parametreille, ja laajennin tätä mukaan sovellusarkkitehtuurin.
+| 17.4  | 3        | Jatkoin sovellusarkkitehtuurin laajentamista korjaamalla  luokkien "Recipe", "Ingredient", ja "RecipeIngredient" muotoa ja toimintaa. Loin DAO-olioille omat "getPrimaryKey()" funktiot. Aloitin sovelluslogiikkamukaisen koodaaminen reseptin tallentamiselle tietokantaan.
+| 20.4  | 2        | Jatkoin sovelluslogiikkamukaisen koodaaminen reseptin tallentamiselle.
+| yht   | 33       |
