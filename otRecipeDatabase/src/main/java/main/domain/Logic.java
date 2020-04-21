@@ -9,14 +9,38 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import main.dao.IngredientDAO;
+import main.dao.RecipeDAO;
+import main.dao.RecipeIngredientDAO;
 
 /**
  *
  * @author J
  */
 public class Logic {
+    
+    private RecipeDAO recipeDAO;
+    private RecipeIngredientDAO recipeIngredientDAO;
+    private IngredientDAO ingredientDAO;
 
     public Logic() {
+                
+        ingredientDAO = new IngredientDAO();  
+        recipeDAO = new RecipeDAO();        
+        recipeIngredientDAO = new RecipeIngredientDAO();
+    }
+    
+    public static void newIngredient(String name) {
+        Ingredient ingredient = new Ingredient(name);
+    }
+    
+    public static void newRecipe() {        
+        
+    }
+    
+    public static void newRecipeIngredient(String name, String amount) {
+        Ingredient ingredient = new Ingredient(name);
+        RecipeIngredient recipeIngredient = new RecipeIngredient(ingredient, amount);
     }
     
     // Just for temporary testing:
@@ -35,11 +59,11 @@ public class Logic {
             conn.prepareStatement(createRecipeIngredientTable).executeUpdate();
             */
             
-            PreparedStatement statement = conn.prepareStatement("INSERT INTO Recipe (id, name, description, source) VALUES (?, ?, ?, ?)");
-            statement.setInt(1, 0); 
-            statement.setString(2, "Blueberry pie");
-            statement.setString(3, "Make blueberry pie! Make lots of it!");
-            statement.setString(4, "The Big Blueberry Book");
+            PreparedStatement statement = conn.prepareStatement("INSERT INTO Recipe (name, description, source) VALUES (?, ?, ?)");
+            // statement.setInt(1, 0); 
+            statement.setString(1, "Blueberry pie");
+            statement.setString(2, "Make blueberry pie! Make lots of it!");
+            statement.setString(3, "The Big Blueberry Book");
             statement.executeLargeUpdate();
             
             statement = conn.prepareStatement("SELECT * FROM Recipe");
@@ -52,11 +76,12 @@ public class Logic {
                 String rivi = id + ", " + name + ", " + description + ", " + source;
                 System.out.println(rivi);
             } 
-
-            statement = conn.prepareStatement("INSERT INTO Ingredient (id, name, recipe_id) VALUES (?, ?, ?)");
-            statement.setInt(1, 0); 
-            statement.setString(2, "Mandelmassa");
-            statement.setInt(3, 0); 
+            
+            
+            statement = conn.prepareStatement("INSERT INTO Ingredient (name) VALUES (?)");
+            // statement.setInt(1, 0); 
+            statement.setString(1, "Mandelmassa");
+            // statement.setInt(2, 0); 
             statement.executeLargeUpdate();
             
             statement = conn.prepareStatement("SELECT * FROM Ingredient");
@@ -69,14 +94,14 @@ public class Logic {
                 System.out.println(rivi);
             } 
             
-            statement = conn.prepareStatement("INSERT INTO RecipeIngredient (id, recipe_id, amount, ingredient_id) VALUES (?, ?, ?, ?)");
-            statement.setInt(1, 0); 
-            statement.setInt(2, 0);
-            statement.setString(3, "1 tsk");
-            statement.setInt(4, 0);
+            statement = conn.prepareStatement("INSERT INTO RecipeIngredient (amount) VALUES (?)");
+            // statement.setInt(1, 0); 
+            // statement.setInt(1, 0);
+            statement.setString(1, "1 tsk");
+            // statement.setInt(3, 0);
             statement.executeLargeUpdate();
 
-            statement = conn.prepareStatement("SELECT * FROM Recipe");
+            statement = conn.prepareStatement("SELECT * FROM RecipeIngredient");
             resultSet = statement.executeQuery();
             while (resultSet.next()) {
                 String id = resultSet.getString("id");

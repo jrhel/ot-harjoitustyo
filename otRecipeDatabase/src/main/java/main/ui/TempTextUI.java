@@ -5,6 +5,8 @@
  */
 package main.ui;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 import main.domain.Logic;
 
@@ -18,8 +20,8 @@ public class TempTextUI {
     private Scanner kbInput;
     
 
-    public TempTextUI(Scanner kbInput) {
-        this.kbInput = kbInput;
+    public TempTextUI() {
+        kbInput = new Scanner(System.in);
         logic = new Logic();
     }
     
@@ -46,6 +48,29 @@ public class TempTextUI {
                 this.logic.testDatabase();
             } else if (command.equals("quit")) {
                 userUndecided = false;
+            } else if (command.equals("add")) {
+                System.out.println("\nPlease, enter the name of the recipe:");
+                String recipeName = kbInput.nextLine();
+                
+                List<String> ingredients = new ArrayList<>();
+                String ingredient = "";
+                while (!ingredient.equals("")) {
+                    String one = "\nPlease type an ingredient and an amout separated by a comma, e.g. ";
+                    String two = "\"Minced ginger, 1 tsp\"";
+                    String three = ", or just Enter to continue:";
+                    System.out.println(one+two+three);
+                    ingredient = kbInput.nextLine();
+                }
+                
+                for (String i: ingredients) {
+                    String[] parts = i.split(",");
+                    String ingredientName = parts[0];
+                    String ingredientAmount = parts[1];
+                    logic.newRecipeIngredient(ingredientName, ingredientAmount);
+                }
+                
+                this.logic.newRecipe();
+                
             } else {
                 System.out.println("Try again. ");
             }

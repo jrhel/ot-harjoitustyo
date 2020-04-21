@@ -25,13 +25,12 @@ public class Main {
         ensureDatabaseConnection();             
         
         // 2.   Instantiating other objects required for UI
-        Scanner kbInput = new Scanner(System.in);
                 
         /* 3.   Instantiate and launch UI
                     This is a temporary text based UI. 
                     The final version of the application is meant to be replaced by a GUI 
         */
-        TempTextUI textUI = new TempTextUI(kbInput);
+        TempTextUI textUI = new TempTextUI();
         textUI.start();
         
         
@@ -43,13 +42,24 @@ public class Main {
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
         
         //      2.   Make sure database has proper tables
+            /*
             String createRecipeTable = "CREATE TABLE IF NOT EXISTS Recipe (id INTEGER, name VARCHAR(128), description CLOB, source VARCHAR(1024), PRIMARY KEY (id));";
             databaseConnection.prepareStatement(createRecipeTable).executeUpdate();
-            
+                                    
             String createIngredientTable = "CREATE TABLE IF NOT EXISTS Ingredient (id INTEGER, name VARCHAR(64), recipe_id INTEGER, PRIMARY KEY (id), FOREIGN KEY (recipe_id) REFERENCES Recipe(id));";            
             databaseConnection.prepareStatement(createIngredientTable).executeUpdate();
             
             String createRecipeIngredientTable = "CREATE TABLE IF NOT EXISTS RecipeIngredient (id INTEGER, recipe_id INTEGER, amount VARCHAR(64), ingredient_id INTEGER, PRIMARY KEY (id), FOREIGN KEY (recipe_id) REFERENCES Recipe(id), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";
+            databaseConnection.prepareStatement(createRecipeIngredientTable).executeUpdate();
+            */            
+            
+            String createIngredientTable = "CREATE TABLE IF NOT EXISTS Ingredient (id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(128));";            
+            databaseConnection.prepareStatement(createIngredientTable).executeUpdate();
+               
+            String createRecipeTable = "CREATE TABLE IF NOT EXISTS Recipe (id INTEGER AUTO_INCREMENT PRIMARY KEY, ingredient_id INTEGER, name VARCHAR(128), description CLOB, source VARCHAR(1024), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";
+            databaseConnection.prepareStatement(createRecipeTable).executeUpdate();           
+            
+            String createRecipeIngredientTable = "CREATE TABLE IF NOT EXISTS RecipeIngredient (id INTEGER AUTO_INCREMENT PRIMARY KEY, recipe_id INTEGER, amount VARCHAR(64), ingredient_id INTEGER, FOREIGN KEY (recipe_id) REFERENCES Recipe(id), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";
             databaseConnection.prepareStatement(createRecipeIngredientTable).executeUpdate();
             
             
