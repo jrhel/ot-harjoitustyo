@@ -46,6 +46,7 @@ TBA
 - The application must work on the Linux- & OSX desktop, 
 - The application cannot be dependent on an internet connection to work,
 - All app data will be saved locally on device.
+- The app has to impement a database.
 
 
 ## Future development
