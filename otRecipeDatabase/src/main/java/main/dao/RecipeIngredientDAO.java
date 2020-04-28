@@ -15,7 +15,7 @@ import main.domain.RecipeIngredient;
 /**
  * This class is a Data Access Object offering an interface between the class "RecipeIngredient" and the database table "RecipeIngredient"
  */
-public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer>{
+public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
     
     /**
      * This method creates an entry in the database table "RecipeIngredient".
@@ -24,14 +24,6 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer>{
      */
     @Override
     public void create(RecipeIngredient ingredient) {
-        
-        System.out.println("");
-        System.out.println("SAVING RECIPEingredient TO DB");
-        System.out.println("RecipeID = " + ingredient.getRecipeId());
-        System.out.println("Name = " + ingredient.getIngredient().getName());
-        System.out.println("Amount: " + ingredient.getAmount());
-        System.out.println("IngredientID = " + ingredient.getIngredientId());
-        System.out.println("");
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             

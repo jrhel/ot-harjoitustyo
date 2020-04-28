@@ -20,14 +20,14 @@ public class Recipe {
     private String name;    
     private List<RecipeIngredient> ingredients;
     private String description;
-    private String Source;
+    private String source;
 
     public Recipe(String name, List<RecipeIngredient> ingredients, String description, String source) {
         this.ingredientId = -1;
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
-        this.Source = source;
+        this.source = source;
     }
 
     public Integer getIngredientId() {
@@ -47,7 +47,7 @@ public class Recipe {
     }
 
     public String getSource() {
-        return Source;
+        return source;
     }  
 
     public void setIngredientId(Integer ingredientId) {

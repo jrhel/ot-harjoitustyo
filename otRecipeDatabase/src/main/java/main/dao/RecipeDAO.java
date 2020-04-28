@@ -15,7 +15,7 @@ import main.domain.Recipe;
 /**
  * This class is a Data Access Object offering an interface between the class "Recipe" and the database table "Recipe"
  */
-public class RecipeDAO implements DAO<Recipe, Integer>{
+public class RecipeDAO implements DAO<Recipe, Integer> {
     
     public RecipeDAO() {
         
@@ -28,14 +28,6 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
      */   
     @Override
     public void create(Recipe recipe) {
-        
-        System.out.println("");
-        System.out.println("SAVING RECIPE TO DB");
-        System.out.println("IngredientID = " + recipe.getIngredientId());
-        System.out.println("Name = " + recipe.getName());
-        System.out.println("Dexcription = " + recipe.getDescription());
-        System.out.println("Source = " + recipe.getSource());
-        System.out.println("");
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             
@@ -132,7 +124,7 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
             databaseConnection.close();        
         
         } catch (Exception e) {
-            System.out.println("RecipeDAO.getPrimaryKey(" + recipeName +") failed: " + e);
+            System.out.println("RecipeDAO.getPrimaryKey(" + recipeName + ") failed: " + e);
         }
         
         return recipeId;

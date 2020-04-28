@@ -26,11 +26,6 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
     @Override
     public void create(Ingredient ingredient) {
         
-        System.out.println("");
-        System.out.println("SAVING INGREDIENT TO DB");
-        System.out.println("Name = " + ingredient.getName());
-        System.out.println("");
-        
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             
             PreparedStatement statement = databaseConnection.prepareStatement("INSERT INTO Ingredient (name) VALUES (?)");
@@ -46,17 +41,17 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
     }
 
     @Override
-    public Ingredient read(Integer key){
+    public Ingredient read(Integer key) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Ingredient update(Ingredient object){
+    public Ingredient update(Ingredient object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Integer key){
+    public void delete(Integer key) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
@@ -92,7 +87,7 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
             databaseConnection.close();        
         
         } catch (Exception e) {
-            System.out.println("IngredientDAO.getPrimaryKey(" + ingredientName +") failed: " + e);
+            System.out.println("IngredientDAO.getPrimaryKey(" + ingredientName + ") failed: " + e);
         }
         
         return ingredientId;
