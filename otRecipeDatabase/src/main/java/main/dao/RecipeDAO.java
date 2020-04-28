@@ -8,6 +8,7 @@ package main.dao;
 import java.sql.*;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import main.domain.Recipe;
 
@@ -24,9 +25,17 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
     @Override
     public void create(Recipe recipe) {
         
+        System.out.println("");
+        System.out.println("SAVING RECIPE TO DB");
+        System.out.println("IngredientID = " + recipe.getIngredientId());
+        System.out.println("Name = " + recipe.getName());
+        System.out.println("Dexcription = " + recipe.getDescription());
+        System.out.println("Source = " + recipe.getSource());
+        System.out.println("");
+        
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             
-            PreparedStatement statement = databaseConnection.prepareStatement("INSERT INTO Recipe (ingredient_id, name, description, source) VALUES (?, ?, ?)");
+            PreparedStatement statement = databaseConnection.prepareStatement("INSERT INTO Recipe (ingredient_id, name, description, source) VALUES (?, ?, ?, ?)");
             statement.setInt(1, recipe.getIngredientId());
             statement.setString(2, recipe.getName());
             statement.setString(3, recipe.getDescription());
@@ -58,8 +67,33 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
     }
 
     @Override
-    public List<Recipe> list() throws SQLException {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Recipe> list() {
+        
+        List<Recipe> recipies = new ArrayList<>();
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            PreparedStatement statement = databaseConnection.prepareStatement("SELECT * FROM Recipe");
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                Integer ingredientId = resultSet.getInt("ingredient_id");
+                String name = resultSet.getString("name");
+                String description = resultSet.getString("description");
+                String source = resultSet.getString("source");
+                
+                Recipe recipe = new Recipe(name, null, description, source);
+                recipies.add(recipe);
+            }
+            
+            statement.close();
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("RecipeDAO.list() failed: " + e);
+        }
+        
+        return recipies;
     }
 
     public Integer getPrimaryKey(String recipeName) {

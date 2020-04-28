@@ -21,6 +21,14 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer>{
     @Override
     public void create(RecipeIngredient ingredient) {
         
+        System.out.println("");
+        System.out.println("SAVING RECIPEingredient TO DB");
+        System.out.println("RecipeID = " + ingredient.getRecipeId());
+        System.out.println("Name = " + ingredient.getIngredient().getName());
+        System.out.println("Amount: " + ingredient.getAmount());
+        System.out.println("IngredientID = " + ingredient.getIngredientId());
+        System.out.println("");
+        
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             
         } catch (Exception e) {

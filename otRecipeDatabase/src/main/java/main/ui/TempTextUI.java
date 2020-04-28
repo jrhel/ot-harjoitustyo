@@ -10,6 +10,7 @@ import java.util.List;
 import java.util.Scanner;
 import main.domain.Ingredient;
 import main.domain.Logic;
+import main.domain.Recipe;
 import main.domain.RecipeIngredient;
 
 /**
@@ -29,7 +30,7 @@ public class TempTextUI {
     
     public void start() {
         
-        String instructions = "To add a new recipe, type \"add\",\n"
+        String instructions = "\nTo add a new recipe, type \"add\",\n"
                             + "to open a recipe, type \"open\",\n"
                             + "to list all the recipies in the database, type \"list\",\n"
                             + "to edit a recipe, type \"edit\", \n"
@@ -45,43 +46,24 @@ public class TempTextUI {
             String command = userCommand.trim().toLowerCase();            
             
             if (command.equals("burn")) {
-                this.logic.burnDatabase();
+                this.logic.resetDatabase();
             } else if (command.equals("test")) {
                 this.logic.testDatabase();
             } else if (command.equals("quit")) {
                 userUndecided = false;
             } else if (command.equals("add")) {
-                System.out.println("\nPlease, enter the name of the recipe:");
-                String recipeName = kbInput.nextLine();
-                
-                List<String> ingredients = new ArrayList<>();
-                String ingredient = "";
-                while (!ingredient.equals("")) {
-                    String one = "\nPlease type an ingredient and an amout separated by a comma, e.g. ";
-                    String two = "\"Minced ginger, 1 tsp\"";
-                    String three = ", or just Enter to continue:";
-                    System.out.println(one+two+three);
-                    ingredient = kbInput.nextLine();
+                newRecipe();
+            } else if (command.equals("list")){
+                List<Recipe> recipies = this.logic.listRecipies();
+                for(Recipe r: recipies) {
+                    System.out.println("");
+                    Integer ingredientID = r.getIngredientId();
+                    String name = r.getName();
+                    String description = r.getDescription();
+                    String source = r.getSource();
+                    String summary = "ingredientID: " + ingredientID + ", name: " + name + ", description: \n   " + description + "\nsource: " + source;
+                    System.out.println(summary);
                 }
-                
-                List<RecipeIngredient> recipeIngredients = new ArrayList<>();
-                for (String i: ingredients) {
-                    String[] parts = i.split(",");
-                    String ingredientName = parts[0];
-                    String ingredientAmount = parts[1];
-                    Ingredient newIngredient = new Ingredient(ingredientName);
-                    RecipeIngredient newRecipeIngredient = new RecipeIngredient(newIngredient, ingredientAmount);
-                    recipeIngredients.add(newRecipeIngredient);
-                }
-                
-                System.out.println("Please enter the instructions for the recipe:");
-                String description = kbInput.nextLine();
-                
-                System.out.println("Finally, enter e source if you wish:");
-                String source = kbInput.nextLine();
-                
-                this.logic.newRecipe(recipeName, recipeIngredients, description, source);
-                
             } else {
                 System.out.println("Try again. ");
             }
@@ -89,6 +71,42 @@ public class TempTextUI {
         
     }
     
-    
+    private void newRecipe() {
+        System.out.println("\nPlease, enter the name of the recipe:");
+        String recipeName = kbInput.nextLine();
+
+        List<String> ingredients = new ArrayList<>();
+        String ingredient = "";
+        while (true) {
+            String one = "\nPlease type an ingredient and an amout separated by a comma, e.g. ";
+            String two = "\"Minced ginger, 1 tsp\"";
+            String three = ", or just Enter to continue:";
+            System.out.println(one+two+three);
+            ingredient = kbInput.nextLine();
+            if (ingredient.equals("")) {
+                break;
+            } else {
+                ingredients.add(ingredient);
+            }
+        }
+
+        List<RecipeIngredient> recipeIngredients = new ArrayList<>();
+        for (String i: ingredients) {
+            String[] parts = i.split(",");
+            String ingredientName = parts[0];
+            String ingredientAmount = parts[1];
+            Ingredient newIngredient = new Ingredient(ingredientName);
+            RecipeIngredient newRecipeIngredient = new RecipeIngredient(newIngredient, ingredientAmount);
+            recipeIngredients.add(newRecipeIngredient);
+        }
+
+        System.out.println("Please enter the instructions for the recipe:");
+        String description = kbInput.nextLine();
+
+        System.out.println("Finally, enter a source if you wish:");
+        String source = kbInput.nextLine();
+
+        this.logic.newRecipe(recipeName, recipeIngredients, description, source);
+    }
     
 }

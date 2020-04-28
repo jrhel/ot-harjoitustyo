@@ -27,7 +27,7 @@ public class Recipe {
         this.name = name;
         this.ingredients = ingredients;
         this.description = description;
-        this.Source = Source;
+        this.Source = source;
     }
 
     public Integer getIngredientId() {
@@ -49,6 +49,12 @@ public class Recipe {
     public String getSource() {
         return Source;
     }  
+
+    public void setIngredientId(Integer ingredientId) {
+        this.ingredientId = ingredientId;
+    }
+    
+    
         
     // Take all necessary steps to save a recipe in accordance with how it may be used in the app
     public void save(IngredientDAO ingredientDAO, RecipeDAO recipeDAO, RecipeIngredientDAO recipeIngredientDAO) {

@@ -28,6 +28,10 @@ public class RecipeIngredient {
     public Integer getRecipeId() {
         return recipeId;
     }
+
+    public Ingredient getIngredient() {
+        return ingredient;
+    }   
     
     public String getAmount() {
         return amount;

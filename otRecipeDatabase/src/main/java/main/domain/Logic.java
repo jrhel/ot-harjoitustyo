@@ -36,6 +36,15 @@ public class Logic {
         recipe.save(ingredientDAO, recipeDAO, recipeIngredientDAO);
     }
     
+    public List<Recipe> listRecipies() {
+        List<Recipe> recipies = recipeDAO.list();
+        for (Recipe r: recipies) {
+            Integer ingredientID = ingredientDAO.getPrimaryKey(r.getName());
+            r.setIngredientId(ingredientID);
+        }
+        return recipies;
+    }
+    
     // Just for temporary testing:
     public static void testDatabase() {
         
@@ -118,19 +127,32 @@ public class Logic {
     
     // Current method helps in testing, but final build should contain possibility to delete database/start over. 
     // That user experience might be quite different than current implementation.
-    public static void burnDatabase() {
-        try (Connection conn = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
-            conn.prepareStatement("DROP TABLE Recipe IF EXISTS;").executeUpdate();
-            conn.prepareStatement("DROP TABLE Ingredient IF EXISTS;").executeUpdate();
-            conn.prepareStatement("DROP TABLE RecipeIngredient IF EXISTS;").executeUpdate();
+    public static void resetDatabase() {
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            databaseConnection.prepareStatement("DROP TABLE Recipe IF EXISTS;").executeUpdate();
+            databaseConnection.prepareStatement("DROP TABLE Ingredient IF EXISTS;").executeUpdate();
+            databaseConnection.prepareStatement("DROP TABLE RecipeIngredient IF EXISTS;").executeUpdate();
             
-            conn.close();
+            String createIngredientTable = "CREATE TABLE IF NOT EXISTS Ingredient (id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(128));";            
+            databaseConnection.prepareStatement(createIngredientTable).executeUpdate();
+               
+            String createRecipeTable = "CREATE TABLE IF NOT EXISTS Recipe (id INTEGER AUTO_INCREMENT PRIMARY KEY, ingredient_id INTEGER, name VARCHAR(128), description CLOB, source VARCHAR(1024), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";
+            databaseConnection.prepareStatement(createRecipeTable).executeUpdate();           
             
-            System.out.println("\nBLAZE OF GLORY!\n");
+            String createRecipeIngredientTable = "CREATE TABLE IF NOT EXISTS RecipeIngredient (id INTEGER AUTO_INCREMENT PRIMARY KEY, recipe_id INTEGER, amount VARCHAR(64), ingredient_id INTEGER, FOREIGN KEY (recipe_id) REFERENCES Recipe(id), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";
+            databaseConnection.prepareStatement(createRecipeIngredientTable).executeUpdate();
+            
+            databaseConnection.close();
+            
+            System.out.println("\nNew & empty database, yay!\n");
             
         } catch (Exception e) {
-            System.out.println("\nThe fire went out. woomp woomp:\n" + e + "\n");
+            System.out.println("\nNo new database for you. woomp woomp:\n" + e + "\n");
         }
+    }
+    
+    public Integer getRecipePrimaryKey(String recipeName) {
+        return recipeDAO.getPrimaryKey(recipeName);
     }
     
 }
