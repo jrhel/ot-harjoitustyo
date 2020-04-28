@@ -65,13 +65,3 @@ Tiedostoon [checkstyle.xml](https://github.com/jrhel/ot-harjoitustyo/blob/master
 ```
 
 Mahdolliset virheilmoitukset selviävät avaamalla selaimella tiedosto _target/site/checkstyle.html_
-
-### JavaDoc
-
-JavaDoc generoidaan komennolla
-
-```
-mvn javadoc:javadoc
-```
-
-JavaDocia voi tarkastella avaamalla selaimella tiedosto _target/site/apidocs/index.html_
