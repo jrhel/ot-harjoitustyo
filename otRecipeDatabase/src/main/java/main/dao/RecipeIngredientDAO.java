@@ -13,11 +13,15 @@ import main.domain.Recipe;
 import main.domain.RecipeIngredient;
 
 /**
- *
- * @author J
+ * This class is a Data Access Object offering an interface between the class "RecipeIngredient" and the database table "RecipeIngredient"
  */
 public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer>{
-
+    
+    /**
+     * This method creates an entry in the database table "RecipeIngredient".
+     *
+     * @param   ingredient   The "RecipeIngredient" to be saved to the database.
+     */
     @Override
     public void create(RecipeIngredient ingredient) {
         
@@ -37,22 +41,22 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer>{
     }
 
     @Override
-    public RecipeIngredient read(Integer key) throws SQLException {
+    public RecipeIngredient read(Integer key) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public RecipeIngredient update(RecipeIngredient object) throws SQLException {
+    public RecipeIngredient update(RecipeIngredient object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Integer key) throws SQLException {
+    public void delete(Integer key) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<RecipeIngredient> list() throws SQLException {
+    public List<RecipeIngredient> list() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     

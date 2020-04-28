@@ -14,11 +14,15 @@ import java.util.List;
 import main.domain.Ingredient;
 
 /**
- *
- * @author J
+ * This class is a Data Access Object offering an interface between the class "Ingredient" and the database table "Ingredient"
  */
 public class IngredientDAO implements DAO<Ingredient, Integer> {
-
+    
+    /**
+     * This method creates an entry in the database table "Ingredient".
+     *
+     * @param   ingredient   The Ingredient to be saved to the database.
+     */
     @Override
     public void create(Ingredient ingredient) {
         
@@ -42,25 +46,32 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
     }
 
     @Override
-    public Ingredient read(Integer key) throws SQLException {
+    public Ingredient read(Integer key){
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Ingredient update(Ingredient object) throws SQLException {
+    public Ingredient update(Ingredient object){
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Integer key) throws SQLException {
+    public void delete(Integer key){
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public List<Ingredient> list() throws SQLException {
+    public List<Ingredient> list() {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
     
+    /**
+     * This method returns the primary key of an entry in the database table "Ingredient".
+     *
+     * @param   ingredientName   The name of the Ingredient of which the primary key is to be obtained.
+     * 
+     * @return the primary key for the Ingredient
+     */    
     public Integer getPrimaryKey(String ingredientName) {
         
         Integer ingredientId = -1;

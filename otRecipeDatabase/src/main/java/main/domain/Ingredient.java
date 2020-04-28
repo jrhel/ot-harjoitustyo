@@ -8,8 +8,7 @@ package main.domain;
 import main.dao.IngredientDAO;
 
 /**
- *
- * @author J
+ * This class contains the necessary variables and methods for handling an Ingredient
  */
 public class Ingredient {
     
@@ -23,6 +22,13 @@ public class Ingredient {
         return name;
     }
     
+    /**
+     * This method passes an Ingredient to a DAO to be saved to a database, and returns the primary key for the database entry.
+     *
+     * @param   ingredientDAO   The DAO which handles the required database operations.
+     * 
+     * @return the primary key for the created database entry
+     */  
     public Integer save(IngredientDAO ingredientDAO) {
         Integer id = -1;
         

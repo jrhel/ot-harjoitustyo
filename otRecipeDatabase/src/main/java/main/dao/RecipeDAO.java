@@ -13,8 +13,7 @@ import java.util.List;
 import main.domain.Recipe;
 
 /**
- *
- * @author J
+ * This class is a Data Access Object offering an interface between the class "Recipe" and the database table "Recipe"
  */
 public class RecipeDAO implements DAO<Recipe, Integer>{
     
@@ -22,6 +21,11 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
         
     }    
     
+    /**
+     * This method creates an entry in the database table "Recipe".
+     *
+     * @param   recipe   The recipe to be entered into the database.
+     */   
     @Override
     public void create(Recipe recipe) {
         
@@ -52,20 +56,25 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
     }
 
     @Override
-    public Recipe read(Integer key) throws SQLException {
+    public Recipe read(Integer key) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public Recipe update(Recipe object) throws SQLException {
+    public Recipe update(Recipe object) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
-    public void delete(Integer key) throws SQLException {
+    public void delete(Integer key) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
-
+    
+    /**
+     * This method makes, and returns, a list of all the recipes in the database.
+     *
+     * @return a list of all the recipes in the database 
+     */ 
     @Override
     public List<Recipe> list() {
         
@@ -95,7 +104,14 @@ public class RecipeDAO implements DAO<Recipe, Integer>{
         
         return recipies;
     }
-
+    
+    /**
+     * This method returns the primary key of an entry in the database table "Recipe".
+     *
+     * @param   recipeName   The name of the Recipe of which the primary key is to be obtained.
+     * 
+     * @return the primary key for the Recipe
+     */
     public Integer getPrimaryKey(String recipeName) {
         
         Integer recipeId = -1;
