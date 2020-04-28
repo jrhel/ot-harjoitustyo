@@ -34,7 +34,7 @@ TBA
 - User can "open"/see/use recipes,
 - User can edit recipes,
 - User can delete recipes,
-- User can list/see overview of all recipes,
+- User can list/see overview of all recipes (Feature implemented),
 - User can search for recipes;
 	- by name,
 	- by ingredients.
