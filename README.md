@@ -4,7 +4,7 @@ Tämä on opiskeluprojekti kurssilla "Ohjelmistotekniikka" Helsingin yliopistoll
 
 ## Dokumentaatio
 
-[Määrittelydokumentti](https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentointi/alustava%20m%C3%A4%C3%A4rittelydokumentti.md)
+[Määrittelydokumentti](https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/alustava%20m%C3%A4%C3%A4rittelydokumentti.md)
 
 [Arkkitehtuurikuvaus](https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/arkkitehtuuri.md)
 
