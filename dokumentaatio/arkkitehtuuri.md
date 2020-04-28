@@ -25,9 +25,8 @@ Sovellusloogiikan hallitsee luokka "[Logic](https://github.com/jrhel/ot-harjoitu
 
 ## Tietojen pysyväistallennus
 
-Pakkauksen "main.dao" luokat "IngredientDAO", "RecipeDAO", & "RecipeIngredientDAO" huolehtivat tietojen tallettamisesta tietokantaan.
+Sovellus toteuttaa [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object) -suunnittelumallia. Pakkauksen "main.dao" luokat "IngredientDAO", "RecipeDAO", & "RecipeIngredientDAO" huolehtivat tietojen tallettamisesta tietokantaan.
 
-Sovellus toteuttaa [Data Access Object](https://en.wikipedia.org/wiki/Data_access_object) -suunnittelumallia.
 
 ### Tietokantakaavio
 
