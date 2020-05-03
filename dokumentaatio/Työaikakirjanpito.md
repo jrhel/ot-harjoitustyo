@@ -16,4 +16,4 @@
 | 1.5   | 2         | JavaDoc-kattavuuden lisäämistä ja koodin kommentointia ja korjaamista.
 | 2.5   | 3         | Siirsin (koodasin uudestaan) DAO-luokkien hallinta täysin "Logic"-luokalle, ja toteutin mahdollisuus listata tietokannassa olevat ainekset.
 | 3.5   | 1         | Lisättiin projektiin JavaFX-riippuvuus ja muokattiin ohjelman Main-luokkaa ja graafista käyttöliittymää niin että ohjelmasta saadann generoitua jar-tiedosto.
-| yht   | 51        |
+| yht   | 52        |
