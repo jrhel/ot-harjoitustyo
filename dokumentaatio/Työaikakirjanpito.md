@@ -17,4 +17,4 @@
 | 2.5   | 3         | Siirsin (koodasin uudestaan) DAO-luokkien hallinta täysin "Logic"-luokalle, ja toteutin mahdollisuus listata tietokannassa olevat ainekset.
 | 3.5   | 4         | Lisättiin projektiin JavaFX-riippuvuus ja muokattiin ohjelman Main-luokkaa ja graafista käyttöliittymää niin että ohjelmasta saadann generoitua jar-tiedosto. Suunnittelin graafisen käyttöliittymän ulkoasun/pääobjektien asettelun, ja koodasin sen rungon.
 | 4.5   | 3         | Koodasin mahdolisuuden lisätä reseptin graafisen käyttöliittymän kautta.
-| yht   | 55        |
+| yht   | 58        |
