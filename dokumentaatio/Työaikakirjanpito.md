@@ -19,4 +19,4 @@
 | 4.5   | 3         | Koodasin mahdolisuuden lisätä reseptin graafisen käyttöliittymän kautta.
 | 5.5   | 4         | Korjasin bugin jonka vuoksi reseptikohtaiset ainekset eivät tallentuneet toivotulla tavalla tietokantaan.
 | 6.5   | 4         | Lisäsin mahdollisuuden avata reseptin katseltavaksi graafisessa käyttöliittymässä.
-| yht   | 58        |
+| yht   | 66        |
