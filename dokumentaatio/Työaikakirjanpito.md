@@ -21,4 +21,4 @@
 | 6.5   | 4         | Lisäsin mahdollisuuden avata reseptin katseltavaksi graafisessa käyttöliittymässä.
 | 7.5   | 3         | Muokkasin graafisen käyttöliittymän ulkoasua, ja lisäsin toiminnon listata reseptejä ja lisäsin sovelluksen aloitussivulle listan tellennetuista resepteistä.
 | 8.5   | 2         | Lisäsinn toiminnallisuuden reseptien etsimiseen nimen perusteella.
-| yht   | 66        | 
+| yht   | 71        | 
