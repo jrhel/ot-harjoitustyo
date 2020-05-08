@@ -20,5 +20,5 @@
 | 5.5   | 4         | Korjasin bugin jonka vuoksi reseptikohtaiset ainekset eivät tallentuneet toivotulla tavalla tietokantaan.
 | 6.5   | 4         | Lisäsin mahdollisuuden avata reseptin katseltavaksi graafisessa käyttöliittymässä.
 | 7.5   | 3         | Muokkasin graafisen käyttöliittymän ulkoasua, ja lisäsin toiminnon listata reseptejä ja lisäsin sovelluksen aloitussivulle listan tellennetuista resepteistä.
-| 8.5   | 2         | Lisäsinn toiminnallisuuden reseptien etsimiseen nimen perusteella.
-| yht   | 71        | 
+| 8.5   | 3         | Lisäsinn toiminnallisuuden reseptien poistamiseen, ja etsimiseen nimen perusteella.
+| yht   | 72        | 
