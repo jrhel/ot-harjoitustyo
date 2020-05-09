@@ -21,5 +21,5 @@
 | 6.5   | 4         | Lisäsin mahdollisuuden avata reseptin katseltavaksi graafisessa käyttöliittymässä.
 | 7.5   | 3         | Muokkasin graafisen käyttöliittymän ulkoasua, ja lisäsin toiminnon listata reseptejä ja lisäsin sovelluksen aloitussivulle listan tellennetuista resepteistä.
 | 8.5   | 3         | Lisäsinn toiminnallisuuden reseptien poistamiseen, ja etsimiseen nimen perusteella.
-| 9.5   | 2         | Estin käyttäjää lisäämästa kahta reseptiä samalla nimellä, ja sovelluksen tallentamasta kahta ainesta samalla nimellä.
-| yht   | 74        | 
+| 9.5   | 3         | Estin käyttäjää lisäämästa kahta reseptiä samalla nimellä, ja sovelluksen tallentamasta kahta ainesta samalla nimellä. Siirsin tietokantakyselyt tietokannan palauttamiselle alkutilaansa sovelluslogiikasta DAO:ille, ja lisäsin mahdollisuuden palauttaa tietokanta alkutilaansa graafisesta käyttöliittymästä.
+| yht   | 75        | 
