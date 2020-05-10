@@ -45,6 +45,7 @@ Viimeinen nappi, eli "**Reset recipe book**", poistaa kaikki tallennetut resepti
 
 Uuden reseptin voi siis lisätä painamalla "**add a new recipe**"-nappia sovelluksen aloitussivulta, jolloin avautuu seuraava sivu/lomake:
 
+<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/New%20recipeForm.png">
 
 ### Reseptien listaaminen
 Toistaiseksi tilapäinen tekstikäyttöliittymä ohjeistaa käyttäjää reseptien listaamiseen.
