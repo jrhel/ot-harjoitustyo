@@ -59,7 +59,7 @@ public class DatabaseTest {
         Ingredient bPieDough = new Ingredient("Blueberry pie dough");
         RecipeIngredient rIbPieDough = new RecipeIngredient(bPieDough, "1");
         ingredientsBlueberryPie.add(rIbPieDough);
-        logic.newRecipe("Blueberry pie", ingredientsBlueberryPie, "Make blueberry pie. Make lots of it!", "The Big Pie Book");
+        logic.saveRecipe("Blueberry pie", ingredientsBlueberryPie, "Make blueberry pie. Make lots of it!", "The Big Pie Book");
         
         List<RecipeIngredient> ingredientsStrawberryPie = new ArrayList<>();
         Ingredient strawberries = new Ingredient("Blueberries");        
@@ -68,7 +68,7 @@ public class DatabaseTest {
         Ingredient sPieDough = new Ingredient("Strawberry pie dough");
         RecipeIngredient rIsPieDough = new RecipeIngredient(bPieDough, "450g");
         ingredientsBlueberryPie.add(rIbPieDough);
-        logic.newRecipe("Strawberry pie", ingredientsStrawberryPie, "Grab a bowl, mix berreis, and make a dough. Then bake!", "The Big Pie Book 2");
+        logic.saveRecipe("Strawberry pie", ingredientsStrawberryPie, "Grab a bowl, mix berreis, and make a dough. Then bake!", "The Big Pie Book 2");
         
         int integerOfID = logic.getRecipePrimaryKey("Strawberry pie");
         assertEquals(2, integerOfID);

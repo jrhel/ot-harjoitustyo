@@ -5,37 +5,32 @@
  */
 package main.domain;
 
-import main.dao.IngredientDAO;
-
 /**
  * This class contains the necessary variables and methods for handling an Ingredient
  */
 public class Ingredient {
     
+    private int id;
     private String name;
 
     public Ingredient(String name) {
         this.name = name;
+        this.id = -2;
     }
 
     public String getName() {
         return name;
     }
-    
-    /**
-     * This method passes an Ingredient to a DAO to be saved to a database, and returns the primary key for the database entry.
-     *
-     * @param   ingredientDAO   The DAO which handles the required database operations.
-     * 
-     * @return the primary key for the created database entry
-     */  
-    public Integer save(IngredientDAO ingredientDAO) {
-        Integer id = -1;
-        
-        ingredientDAO.create(this);
-        id = ingredientDAO.getPrimaryKey(this.name);
-        
+
+    public int getId() {
         return id;
+    }   
+
+    public void setId(int id) {
+        this.id = id;
+    }    
+
+    public void setName(String name) {
+        this.name = name;
     }
-    
 }

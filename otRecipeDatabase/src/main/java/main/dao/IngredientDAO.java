@@ -10,6 +10,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 import main.domain.Ingredient;
 
@@ -19,7 +20,7 @@ import main.domain.Ingredient;
 public class IngredientDAO implements DAO<Ingredient, Integer> {
     
     /**
-     * This method creates an entry in the database table "Ingredient".
+     * This method creates an entry in the database table "Ingredient", if the entry does not already exist.
      *
      * @param   ingredient   The Ingredient to be saved to the database.
      */
@@ -28,11 +29,17 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             
-            PreparedStatement statement = databaseConnection.prepareStatement("INSERT INTO Ingredient (name) VALUES (?)");
-            statement.setString(1, ingredient.getName());            
-            statement.executeLargeUpdate();
+            // Check if ingredient already exists in the database            
+            if (getPrimaryKey(ingredient.getName()) < 0) {
+                
+                // If such an Ingredient does not exist in the database, it will be created
+                PreparedStatement statement = databaseConnection.prepareStatement("INSERT INTO Ingredient (name) VALUES (?)");
+                statement.setString(1, ingredient.getName());            
+                statement.executeLargeUpdate();
             
-            statement.close();
+                statement.close();
+            }
+            
             databaseConnection.close();   
             
         } catch (Exception e) {
@@ -42,22 +49,109 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
 
     @Override
     public Ingredient read(Integer key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        Ingredient ingredient = new Ingredient("");
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            PreparedStatement statement = databaseConnection.prepareStatement("SELECT * FROM Ingredient WHERE id = ?");
+            statement.setInt(1, key);
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                ingredient.setId(resultSet.getInt("id"));
+                ingredient.setName(resultSet.getString("name"));
+            }
+            
+            resultSet.close();
+            statement.close();
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("IngredientDAO.read() failed: " + e);
+        }
+        
+        return ingredient;
     }
 
     @Override
-    public Ingredient update(Ingredient object) {
+    public Ingredient update(Ingredient ingredient) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void delete(Integer key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            PreparedStatement statement = databaseConnection.prepareStatement("DELETE FROM Ingredient WHERE id = ?");
+            statement.setInt(1, key);
+            statement.execute();
+            
+            statement.close();
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("IngredientDAO.delete() failed: " + e);
+        }
     }
 
     @Override
     public List<Ingredient> list() {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        List<Ingredient> ingredients = new ArrayList<>();
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            PreparedStatement statement = databaseConnection.prepareStatement("SELECT * FROM Ingredient");
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                Ingredient ingredient = new Ingredient(name);
+                ingredient.setId(id);
+                ingredients.add(ingredient);
+            }
+            
+            statement.close();
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("IngredientDAO.list() failed: " + e);
+        }
+        
+        return ingredients;
+    }
+    
+    public void ensureTableExists() {
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            String createIngredientTable = "CREATE TABLE IF NOT EXISTS Ingredient (id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(128));";            
+            databaseConnection.prepareStatement(createIngredientTable).executeUpdate();
+            
+            databaseConnection.close();            
+            
+        } catch (Exception e) {
+        // For testing purposes:
+            System.out.println("\nERROR in Main > ensureDatabaseConnection():\n" + e + "\n");
+        }     
+    }
+    
+    public void resetTable() {
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            databaseConnection.prepareStatement("DROP TABLE Ingredient IF EXISTS;").executeUpdate();
+            
+            String createIngredientTable = "CREATE TABLE IF NOT EXISTS Ingredient (id INTEGER AUTO_INCREMENT PRIMARY KEY, name VARCHAR(128));";            
+            databaseConnection.prepareStatement(createIngredientTable).executeUpdate();
+            
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("Could not reset Ingredient table: " + e);
+        }        
     }
     
     /**
@@ -65,11 +159,11 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
      *
      * @param   ingredientName   The name of the Ingredient of which the primary key is to be obtained.
      * 
-     * @return the primary key for the Ingredient
+     * @return the primary key for the Ingredient, or "-1" if no such ingredient has been entered into the database
      */    
     public Integer getPrimaryKey(String ingredientName) {
         
-        Integer ingredientId = -1;
+        int ingredientId = -1;
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
             

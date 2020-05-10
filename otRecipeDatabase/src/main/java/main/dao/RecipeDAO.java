@@ -11,6 +11,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import main.domain.Recipe;
+import main.domain.RecipeIngredient;
 
 /**
  * This class is a Data Access Object offering an interface between the class "Recipe" and the database table "Recipe"
@@ -49,17 +50,56 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
 
     @Override
     public Recipe read(Integer key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        List<RecipeIngredient> ingredients = new ArrayList<>();
+        Recipe recipe = new Recipe("", ingredients, "", "");
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            PreparedStatement statement = databaseConnection.prepareStatement("SELECT * FROM Recipe WHERE id = ?");
+            statement.setInt(1, key);
+            ResultSet resultSet = statement.executeQuery();
+            
+            while (resultSet.next()) {
+                recipe.setId(resultSet.getInt("id"));
+                recipe.setIngredientId(resultSet.getInt("ingredient_id"));
+                recipe.setName(resultSet.getString("name"));
+                recipe.setDescription(resultSet.getString("description"));
+                recipe.setSource(resultSet.getString("source"));                
+            }
+            
+            resultSet.close();
+            statement.close();
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("RecipeDAO.read() failed for primary key(" + key + "): " + e);
+        }
+        
+        return recipe;
     }
 
     @Override
-    public Recipe update(Recipe object) {
+    public Recipe update(Recipe ingredient) {
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
     @Override
     public void delete(Integer key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            PreparedStatement statement = databaseConnection.prepareStatement("DELETE FROM Recipe WHERE id = ?");
+            statement.setInt(1, key);
+            statement.execute();
+            
+            statement.close();
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("RecipeDAO.delete() failed: " + e);
+        }
+        
     }
     
     /**
@@ -87,6 +127,7 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
                 recipies.add(recipe);
             }
             
+            resultSet.close();
             statement.close();
             databaseConnection.close();
             
@@ -97,12 +138,42 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
         return recipies;
     }
     
+    public void ensureTableExists() {
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            
+            String createRecipeTable = "CREATE TABLE IF NOT EXISTS Recipe (id INTEGER AUTO_INCREMENT PRIMARY KEY, ingredient_id INTEGER, name VARCHAR(128), description CLOB, source VARCHAR(1024), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";
+            databaseConnection.prepareStatement(createRecipeTable).executeUpdate();   
+            
+            databaseConnection.close();            
+            
+        } catch (Exception e) {
+        // For testing purposes:
+            System.out.println("\nERROR in Main > ensureDatabaseConnection():\n" + e + "\n");
+        }     
+    }
+    
+    public void resetTable() {
+        
+        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
+            databaseConnection.prepareStatement("DROP TABLE Recipe IF EXISTS;").executeUpdate();
+            
+            String createIngredientTable = "CREATE TABLE IF NOT EXISTS Recipe (id INTEGER AUTO_INCREMENT PRIMARY KEY, ingredient_id INTEGER, name VARCHAR(128), description CLOB, source VARCHAR(1024), FOREIGN KEY (ingredient_id) REFERENCES Ingredient(id));";            
+            databaseConnection.prepareStatement(createIngredientTable).executeUpdate();
+            
+            databaseConnection.close();
+            
+        } catch (Exception e) {
+            System.out.println("Could not reset Recipe table: " + e);
+        }        
+    }
+    
     /**
      * This method returns the primary key of an entry in the database table "Recipe".
      *
      * @param   recipeName   The name of the Recipe of which the primary key is to be obtained.
      * 
-     * @return the primary key for the Recipe
+     * @return the primary key for the Recipe, or "-1" if no such recipe has been entered into the database
      */
     public Integer getPrimaryKey(String recipeName) {
         

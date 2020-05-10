@@ -5,28 +5,24 @@
  */
 package main.domain;
 
-import main.dao.RecipeIngredientDAO;
-
 /**
  *
  * @author J
  */
 public class RecipeIngredient {
     
-    private Integer recipeId;
+    private int id;
+    private int recipeId;
     private Ingredient ingredient;
     private String amount;
-    private Integer ingredientId;
 
     public RecipeIngredient(Ingredient ingredient, String amount) {
         this.ingredient = ingredient;
         this.amount = amount;
-        this.recipeId = -1;
-        this.ingredientId = -1;
     }
 
-    public Integer getRecipeId() {
-        return recipeId;
+    public int getId() {
+        return id;
     }
 
     public Ingredient getIngredient() {
@@ -37,21 +33,23 @@ public class RecipeIngredient {
         return amount;
     }
 
-    public Integer getIngredientId() {
-        return ingredientId;
-    }
-    
-    public void save(RecipeIngredientDAO recipeIngredientDAO) {                
-        recipeIngredientDAO.create(this);        
+    public int getRecipeId() {
+        return recipeId;
     }
 
-    public void setRecipeId(Integer recipeId) {
+    public void setRecipeId(int recipeId) {
         this.recipeId = recipeId;
-    }    
+    }   
 
-    public void setIngredientId(Integer ingredientId) {
-        this.ingredientId = ingredientId;
+    public void setId(int id) {
+        this.id = id;
     }
-    
-    
+
+    public void setAmount(String amount) {
+        this.amount = amount;
+    }
+
+    public void setIngredient(Ingredient ingredient) {
+        this.ingredient = ingredient;
+    }
 }
