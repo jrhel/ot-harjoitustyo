@@ -59,7 +59,7 @@ The page for search results is similar to the home page, but without the menu on
 - The application must work on the Linux- & OSX desktop, 
 - The application cannot be dependent on an internet connection to work,
 - All app data will be saved locally on device.
-- The app has to impement a database.
+- The app has to use a database.
 
 
 ## Future development
@@ -69,6 +69,8 @@ The page for search results is similar to the home page, but without the menu on
 - Allow users to edit recipes as they read them,
 - Allow users to search for recipes containing specific ingredients,
 - Categorize recipes, and search for recipes based on category - e.g. "fish",
+- Allow users to add pictures to recipies,
+- Allow users to import recipes from other formats, e.g. pdf-files, photos, websites etc.
 
 **Would require transition from purely "offline" state:**
 - Sync personal recipes accross devices,
