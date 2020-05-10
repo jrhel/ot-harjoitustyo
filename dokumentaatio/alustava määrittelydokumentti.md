@@ -38,17 +38,17 @@ A recipe is shown on a following page (the recipe is an example):
 The page for search results is similar to the home page, but without the menu on the left side of the home page.
 
 
-## Functinality of core application
+## Functinality
 
-- User can add new recipes (Feature implemented),
-- User can "open"/see/use recipes (Feature implemented), 
-- User can edit recipes,
-- User can delete recipes (Feature implemented),
-- User can list/see overview of all recipes (Feature implemented),
-- User can search for recipes;
-	- by name (Feature implemented),
-	- by ingredients.
-
+- User can add new recipes,
+- User can list/see overview of all recipes,
+- User can "open"/read recipes from a list, 
+- User can open a recipe straight from the list of ingredients in another recipe, if the recipe is an ingredient of another one,
+- User can search for recipes,
+- User can delete recipes,
+- User can empty their recipe book/reset application
+- Application updates home screen on the fly as recipes are added and deleted,
+- Application warns user before resetting application;
 
 
 ## Restrictions on application
@@ -61,7 +61,10 @@ The page for search results is similar to the home page, but without the menu on
 
 ## Future development
 
-- Allow users to look up the range of recipes containing specific ingredients,
+- Dynamically increase possible amount of ingredients in a recipe,
+- Add vertical scrollbar to recipe list on home screen and search results to more easily browse large recipe books,
+- Allow users to edit recipes as they read them,
+- Allow users to search for recipes containing specific ingredients,
 - Categorize recipes, and search for recipes based on category - e.g. "fish",
 
 **Would require transition from purely "offline" state:**
