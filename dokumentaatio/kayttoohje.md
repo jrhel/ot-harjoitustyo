@@ -64,8 +64,5 @@ Aloitussivun reseptilista päivittyy reaaliaikaisesti kun reseptejä lisätään
 
 ### Reseptien poistaminen ja muokkaaminen
 
-Resept
+Reseptin voi poistaa sen omalta sivulta, eli kun reseptin on ensin saatu avattua. Reseptin oikeasta alakulmasta löytyy nappi "**Delete recipe**" jonka painamalla avattu resepti poistetaan sovelluksesta. Nappi näkyy yllä olevasta kuvasta.
 
-### Tietokannan tyhjentäminen ja palauttaminen alkutilaan
-
-Tietokantaa voidaan tyhjentää ja palauttaa alkutilaan, esim. sovellusta testatessa tai muuten vaan. 
