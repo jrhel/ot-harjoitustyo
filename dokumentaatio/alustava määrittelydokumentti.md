@@ -21,19 +21,21 @@ which they themselves build up as they add to it over time.
 
 ## User interface
 
-The user interface consists of a home page, a page/form for adding ne recipies, a page for each recipe, and a page for searhc results.
-
+The user interface consists of a home page, a page/form for adding ne recipies, a page for each recipe, and a page for searhc results. 
 The home page allows the user to e.g. browse recipies, add new ones, and search for old ones: 
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Alustettu%20aloitusnakyma.jpg">
+
 
 A new recipe is added by filling out the following form/page:
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/New%20recipeForm.png">
 
+
 A recipe is shown on a following page (the recipe is an example):
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/bechamel.jpg">
+
 
 The page for search results is similar to the home page, but without the menu on the left side of the home page.
 
