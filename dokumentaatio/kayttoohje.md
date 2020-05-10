@@ -3,9 +3,9 @@
 Lataa tiedosto [otRecipeDatabase.jar](https://github.com/jrhel/ot-harjoitustyo/releases)
 
 
-## Konfigurointi & yleiset tiedot
+## Konfigurointi
 
-Ohjelma luo tarvittavat tiedostot. Sovelluksen käyttöliittymä on englanniksi.
+Ohjelma luo tarvittavat tiedostot.
 
 
 ## Ohjelman käynnistäminen
@@ -17,7 +17,12 @@ java -jar otRecipeDatabase-1.0-SNAPSHOT.jar
 ```
 
 
-## Sovelluksen aloitussivu
+## Sovelluksen käyttöliittymä
+
+Sovelluksen käyttöliittymä on englanniksi.
+
+
+### Aloitussivu
 
 Sovellus käynnistyy avausnäkymään, jonka vasemmassa laidassa on valikko, jonka oikealla puolella on lista sovelluksessa tellennetuista resepteistä. Alla olevassa esimerkissä on tallennettuna viisi reseptiä: "Bechamel sauce", "Lasagna", "Blueberry pie", "Mushroom risotto", & "Ragu". Jokaista reseptiä pääsee lukemaan painamalla sitä tästä listalta.
 
@@ -36,15 +41,15 @@ Viimeinen nappi, eli "**Reset recipe book**", poistaa kaikki tallennetut resepti
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Tyhja%20avausnakyma.jpg">
 
 
-## Uuden reseptin luominen
+### Uuden reseptin luominen
 
 Toistaiseksi tilapäinen tekstikäyttöliittymä ohjeistaa käyttäjää reseptin luomiseen.
 
 
-## Reseptien listaaminen
+### Reseptien listaaminen
 Toistaiseksi tilapäinen tekstikäyttöliittymä ohjeistaa käyttäjää reseptien listaamiseen.
 
 
-## Tietokannan tyhjentäminen ja palauttaminen alkutilaan
+### Tietokannan tyhjentäminen ja palauttaminen alkutilaan
 
 Tietokantaa voidaan tyhjentää ja palauttaa alkutilaan, esim. sovellusta testatessa tai muuten vaan. 
