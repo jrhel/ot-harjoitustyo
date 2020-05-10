@@ -22,7 +22,9 @@ Lisäksi käyttöliittymä sisältää useita varoitus-/varmistusviestejä käyt
 
 Päänäkymät, ja viestit ovat toteutettuna omilla "[Stage](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html)"-olioilla jotta käyttäjä voisi pitää useita näkymiä esillä samaan aikaan.
 
-Käyttöliittymä on eristetty sovelluslogiikasta, ja ainoastaan kutsuu sopivin parametrein sovelluslogiikan ("Logic") metodeja. Käyttöliittymä on rakennettu ohjelmallisesti luokassa main.domain.Logic.
+Kun reseptejä poistetaan tai lisätään, kutsuu käyttöliittymä tarvittavat sovelluslogiikan metodit ja päivittää aloitussivun reseptihakemistoa.
+
+Käyttöliittymä on eristetty "[sovelluslogiikasta](https://github.com/jrhel/ot-harjoitustyo/blob/master/otRecipeDatabase/src/main/java/main/domain/Logic.java)", jonka metodeja käyttöliittymä ainoastaan kutsuu sopivin parametrein. Käyttöliittymä on rakennettu ohjelmallisesti luokassa main.domain.Logic.
 
 
 ## Sovelluslogiikka
