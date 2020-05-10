@@ -29,6 +29,8 @@ Käyttöliittymä on eristetty "[sovelluslogiikasta](https://github.com/jrhel/ot
 
 ## Sovelluslogiikka
 
+Sovelluksen loogisen datamallin muodostavat luokat Ingredient, Recipe & RecipeIngredient, jotka kuvaavat aineksia, reseptejä, ja reseptikohtaiset aineksien käytöt:
+
 Sovellusloogiikan hallitsee luokka "[Logic](https://github.com/jrhel/ot-harjoitustyo/blob/master/otRecipeDatabase/src/main/java/main/domain/Logic.java)". Tämä tapahtuu luokkia "[Recipe](https://github.com/jrhel/ot-harjoitustyo/blob/master/otRecipeDatabase/src/main/java/main/domain/Recipe.java)" (joka kuvaa reseptin), "[Ingredient](https://github.com/jrhel/ot-harjoitustyo/blob/master/otRecipeDatabase/src/main/java/main/domain/Ingredient.java)" (joka kuvaa resepteissä käytettävän aineksen), ja "[RecipeIngredient](https://github.com/jrhel/ot-harjoitustyo/blob/master/otRecipeDatabase/src/main/java/main/domain/RecipeIngredient.java)" (joka helpottaa sovelluslogiikan ja tietokannan yhtenäisyyden ja eri määrien käyttö eri resepteissä samasta aineksesta) käyttäen. Tietokantaan voi tutustua alla seruaavassa osassa. Tässä vielä alustava sovelluksen osien suhdetta kuvaava luokka/pakkauskaavio:
 
 
