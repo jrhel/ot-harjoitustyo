@@ -65,6 +65,8 @@ Kun käyttäjä painaa "add a new recipe", avautuu kyttöliittymän uusi ikkuna,
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
 
+- Käyttöliittymä voisi olla grafisesti kauniimpi,
+- Sovellus voisi varoittaa käyttäjää enemmän tämän toimista.
 
 
 
