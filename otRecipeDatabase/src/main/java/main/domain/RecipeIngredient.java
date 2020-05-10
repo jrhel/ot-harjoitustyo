@@ -6,8 +6,7 @@
 package main.domain;
 
 /**
- *
- * @author J
+ * This class contains the necessary variables and methods for handling a RecipeIngredient
  */
 public class RecipeIngredient {
     

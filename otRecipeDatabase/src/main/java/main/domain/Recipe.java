@@ -8,8 +8,7 @@ package main.domain;
 import java.util.List;
 
 /**
- *
- * @author J
+ * This class contains the necessary variables and methods for handling a Recipe
  */
 public class Recipe {
     

@@ -47,8 +47,14 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
         }
         
     }
-
-    @Override
+    
+    /**
+     * This method fetches and returns a specific "Recipe" from the database.
+     *
+     * @param   key   The primary key of the "Recipe" which is to be obtained.
+     * 
+     * @return a Recipe
+     */
     public Recipe read(Integer key) {
         
         List<RecipeIngredient> ingredients = new ArrayList<>();
@@ -78,12 +84,12 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
         
         return recipe;
     }
-
-    @Override
-    public Recipe update(Recipe ingredient) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
+    /**
+     * This method deletes an entry in the database table "Recipe".
+     *
+     * @param   key   The primary key for the entry to be deleted from the database.
+     */
     @Override
     public void delete(Integer key) {
         
@@ -138,6 +144,9 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
         return recipies;
     }
     
+    /**
+     * This method makes sure that there is a table "Recipe" in the correct form for the application to use.
+     */
     public void ensureTableExists() {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
@@ -153,6 +162,9 @@ public class RecipeDAO implements DAO<Recipe, Integer> {
         }     
     }
     
+    /**
+     * This method resets the table "Recipe".
+     */
     public void resetTable() {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {

@@ -38,21 +38,15 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close(); 
             
         } catch (Exception e) {
-            System.out.println("RecipeIgredientDAO.create() failed for (" + ingredient.getIngredient().getName() + "): " + e);
+            
         }
     }
-
-    @Override
-    public RecipeIngredient read(Integer key) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
-    public RecipeIngredient update(RecipeIngredient ingredient) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
-    @Override
+    
+    /**
+     * This method deletes an entry in the database table "RecipeIngredient".
+     *
+     * @param   key   The primary key for the entry to be deleted from the database.
+     */
     public void delete(Integer key) {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
@@ -65,10 +59,15 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();
             
         } catch (Exception e) {
-            System.out.println("RecipeDAO.delete() failed: " + e);
+            
         }
     }
-
+    
+    /**
+     * This method fetches and returns all the entries in the database table "RecipeIngredient".     *
+     * 
+     * @return a list of all the "RecipeIngredients" that have been entered into the database
+     */
     @Override
     public List<RecipeIngredient> list() {
         List<RecipeIngredient> recipies = new ArrayList<>();
@@ -84,11 +83,11 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
                 String amount = resultSet.getString("amount");
                 Integer ingredient_id = resultSet.getInt("ingredient_id");
                 
-                RecipeIngredient recipe = new RecipeIngredient(null, amount);
-                recipe.setId(id);
-                recipe.setRecipeId(recipe_id);
+                RecipeIngredient ri = new RecipeIngredient(null, amount);
+                ri.setId(id);
+                ri.setRecipeId(recipe_id);
                 
-                recipies.add(recipe);
+                recipies.add(ri);
             }
             
             resultSet.close();
@@ -96,12 +95,15 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();
             
         } catch (Exception e) {
-            System.out.println("RecipeDAO.list() failed: " + e);
+            
         }
         
         return recipies;
     }
     
+    /**
+     * This method makes sure that there is a table "RecipeIngredient" in the correct form for the application to use.
+     */
     public void ensureTableExists() {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
@@ -112,11 +114,13 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();            
             
         } catch (Exception e) {
-        // For testing purposes:
-            System.out.println("\nERROR in Main > ensureDatabaseConnection():\n" + e + "\n");
+            
         }     
     }
     
+    /**
+     * This method resets the table "RecipeIngredient".
+     */
     public void resetTable() {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
@@ -128,10 +132,17 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();
             
         } catch (Exception e) {
-            System.out.println("Could not reset RecipeIngredient table: " + e);
+            
         }        
     }
     
+    /**
+     * This method fetches and returns all the "RecipeIngredients" from the database for a specific "Recipe".
+     *
+     * @param   recipeKey   The primary key of the "Recipe" of which the "RecipeIngredients" are to be obtained.
+     * 
+     * @return a list of the "Recipe"-specific RecipeIngredients
+     */
     public List<RecipeIngredient> getIngredientsForRecipe (Integer recipeKey) {
         
         List<RecipeIngredient> ingredients = new ArrayList<>();
@@ -156,12 +167,19 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();
             
         } catch (Exception e) {
-            System.out.println("RecipeIngredientDAO.list() failed: " + e);
+            
         }
         
         return ingredients;
     }
     
+    /**
+     * This method fetches and returns the foreign key for a "RecipeIngredients" corresponding "Ingredient".
+     *
+     * @param   primaryKey   The "RecipeIngredients" primary key
+     * 
+     * @return the foreign key to the corresponding Ingredient, or "-1" if it could not be found in the database.
+     */
     public Integer getIngredientId(Integer primaryKey) {
         
         Integer ingredientId = -1;
@@ -181,41 +199,19 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();
             
         } catch (Exception e) {
-            System.out.println("getIngredientId() failed: " + e);
+            
         }
         
         return ingredientId;
     }
-
-    @Override
-    public String toString() {
-        
-        String s = "";
-        
-        try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
-            
-            PreparedStatement statement = databaseConnection.prepareStatement("SELECT * FROM RecipeIngredient");
-            ResultSet resultSet = statement.executeQuery();
-            
-            while (resultSet.next()) {
-                int id = resultSet.getInt("id");
-                int recipeId = resultSet.getInt("recipe_id");
-                String amount = resultSet.getString("amount");
-                int ingredientId = resultSet.getInt("ingredient_id");
-                s = id + ", " + recipeId + ", " + amount + ", " + ingredientId + "\n";
-            }    
-            
-            resultSet.close();
-            statement.close();
-            databaseConnection.close();
-            
-        } catch (Exception e) {
-            System.out.println("RecipeIngredientDAO.toString() failed: " + e);
-        }
-        
-        return s;
-    }
     
+    /**
+     * This method fetches and returns the primary key for a "RecipeIngredient".
+     *
+     * @param   ingredientId   The primary key of  the Ingredient corresponding to the desired "RecipeIngredient"
+     * 
+     * @return the primary key for the desired "RecipeIngredient", or "-1" if it could not be found in the database.
+     */
     public Integer getPrimaryKey(Integer ingredientId) {
         
         Integer recipeId = -1;
@@ -236,10 +232,9 @@ public class RecipeIngredientDAO implements DAO<RecipeIngredient, Integer> {
             databaseConnection.close();        
         
         } catch (Exception e) {
-            System.out.println("Oho: " + e);
+            
         }
         
         return recipeId;
-    }
-    
+    }    
 }

@@ -46,8 +46,14 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
             System.out.println("IngredientDAO.create() failed for (" + ingredient.getName() + "): " + e);
         }
     }
-
-    @Override
+    
+    /**
+     * This method fetches and returns a specific "Ingredient" from the database.
+     *
+     * @param   key   The primary key of the "Ingredient" which is to be obtained.
+     * 
+     * @return an Ingredient
+     */
     public Ingredient read(Integer key) {
         
         Ingredient ingredient = new Ingredient("");
@@ -73,12 +79,12 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
         
         return ingredient;
     }
-
-    @Override
-    public Ingredient update(Ingredient ingredient) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
-
+    
+    /**
+     * This method deletes an entry in the database table "Ingredient".
+     *
+     * @param   key   The primary key for the entry to be deleted from the database.
+     */
     @Override
     public void delete(Integer key) {
         
@@ -95,7 +101,12 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
             System.out.println("IngredientDAO.delete() failed: " + e);
         }
     }
-
+    
+    /**
+     * This method makes, and returns, a list of all the "Ingredients" in the database.
+     *
+     * @return a list of all the "Ingredients" in the database 
+     */ 
     @Override
     public List<Ingredient> list() {
         
@@ -124,6 +135,9 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
         return ingredients;
     }
     
+    /**
+     * This method makes sure that there is a table "Ingredient" in the correct form for the application to use.
+     */
     public void ensureTableExists() {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
@@ -139,6 +153,9 @@ public class IngredientDAO implements DAO<Ingredient, Integer> {
         }     
     }
     
+    /**
+     * This method resets the table "Ingredient".
+     */
     public void resetTable() {
         
         try (Connection databaseConnection = DriverManager.getConnection("jdbc:h2:./recipeDatabase", "sa", "")) {
