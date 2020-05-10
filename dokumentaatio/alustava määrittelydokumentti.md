@@ -52,7 +52,7 @@ The page for search results is similar to the home page, but without the menu on
 - Application warns user before resetting application,
 - Application doesn't delete an ingredient from the applications database when deleting a recipe, if another recipe uses given ingredient,
 - Application prevents user from saving multiple recipes with the same name.
-- Application implements a "browser"-like user experience, through the opening and closing of "pages", allowing users to open multiple pages at a time, as well as doin other stuff.
+- Application implements a "browser"-like user experience, through the opening and closing of "pages", allowing users to open multiple pages at a time, as well as doing other stuff.
 
 ## Restrictions on application
 
