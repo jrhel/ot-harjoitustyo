@@ -5,7 +5,7 @@
 Ohjelman rakenne noudattelee kolmitasoista kerrosarkkitehtuuria. Pääasiallinen rakenne sisältää "main"-paketin, joka puolestaan sisältää paketteja käyttöliittymälle, sovelluslogiikalle, ja DAO:ille. Rakenne kuvattuna alla:
 
 
-<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/pakkausarkkitehtuuri.jpg">
+<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Pakkaus_kaavio.jpg">
 
 Pakkaus main.ui sisältää JavaFX:llä toteutetun käyttöliittymän joka käynnistää sovelluslogiikan. Sovelluslogiikka on toteutettu pakkauksessa main.logic, ja halitsee DAO:t joihin on toteutettu pysyväistallennuksesta vastaavan koodin. DAO:t on teoteutettu pakkaukseen main.dao.
 
