@@ -12,9 +12,17 @@ Pakkaus main.ui sisältää JavaFX:llä toteutetun käyttöliittymän joka käyn
 
 ## Käyttöliittymä
 
-On tarkoituksena toteuttaa graafinen käyttöliittymä. Toistaiseksi, sovelluslogiikan testaamiseksi on olemassa väliaikainen tekstikäyttöliittymä. Se toimii tulostamalla ohjeita ja kysymällä komentoja käyttäjältä jolla se voi hallita sovellusta.
+Sovellus toteuttaa graafisen käyttöliittymän. Käyttöliittymä sisältää neljä päänäkymää:
+- Aloitussivu
+- Sivu/lomake reseptien lisäämiselle
+- Sivu reseptin lukemiselle
+- Sivu hakutuloksille
 
-Käyttöliittymä on eristetty sovelluslogiikasta ja ainoastaan kutsuu sopivin parametrein sovelluslogiikan ("Logic") metodeja.
+Lisäksi käyttöliittymä sisältää useita varoitus-/varmistusviestejä käyttäjän toimille jotka muuten saattaisivat antaa käyttäjän tuhota oman työnsä vahingossa.
+
+Päänäkymät, ja viestit ovat toteutettuna omilla "[Stage](https://docs.oracle.com/javase/8/javafx/api/javafx/stage/Stage.html)"-olioilla jotta käyttäjä voisi pitää useita näkymiä esillä samaan aikaan.
+
+Käyttöliittymä on eristetty sovelluslogiikasta, ja ainoastaan kutsuu sopivin parametrein sovelluslogiikan ("Logic") metodeja. Käyttöliittymä on rakennettu ohjelmallisesti luokassa main.domain.Logic.
 
 
 ## Sovelluslogiikka
