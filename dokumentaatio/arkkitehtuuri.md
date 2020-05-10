@@ -61,6 +61,8 @@ Kun käyttäjä painaa "add a new recipe", avautuu kyttöliittymän uusi ikkuna,
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/new%20recipe%20logic.jpg">
 
+<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/fdsfdsfdsf.jpg">
+
 
 
 ## Ohjelman rakenteeseen jääneet heikkoudet
