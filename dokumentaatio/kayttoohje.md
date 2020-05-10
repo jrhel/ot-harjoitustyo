@@ -47,7 +47,11 @@ Uuden reseptin voi siis lisätä painamalla "**add a new recipe**"-nappia sovell
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/New%20recipeForm.png">
 
-Esitetyn sivun ylempään tekstikenttään on tarkoitus syöttää reseptin nimi. Tämän alla on oikealla laidalla teksti alue johon voi syöttää vapaamuotoinen kuvaus reseptistä, ohje sen tekemiseen, tai mitä ikinäkin jota toivoo pystyä lukemaan reseptiä luetessa tulevaisuudessa. Oikealla laidalla on taas kaksi saraketta tekstialueita. Näistä vasempiin on tarkoitus syöttää reseptiin tarvittavat ainekset ja oikeisiin, vasemmalla olevaan tekstikentään syötetyn aineksen, määrä. 
+Esitetyn sivun ylempään tekstikenttään on tarkoitus syöttää reseptin nimi. Tämän alla on oikealla laidalla teksti alue johon voi syöttää vapaamuotoinen kuvaus reseptistä, ohje sen tekemiseen, tai mitä ikinäkin jota toivoo pystyä lukemaan reseptiä luetessa tulevaisuudessa. Tekstialueen alla on vielä tekstikenttä johon voi lisätä reseptin lähde, jos haluaa. Oikealla laidalla on taas kaksi saraketta tekstialueita. Näistä vasempiin on tarkoitus syöttää reseptiin tarvittavat ainekset ja oikeisiin, vasemmalla olevaan tekstikentään syötetyn aineksen, määrä. Alla on sivu/lomake täytetty tarvittavila tiedoilla jotta reseptin voisi tallentaa:
+
+<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/roux%20recipe.jpg">
+
+Reseptin saa viimein tallennettua painamalla oikeassa alakulmassa olevaa "**Save recipe**"-nappia.
 
 ### Reseptien listaaminen
 Toistaiseksi tilapäinen tekstikäyttöliittymä ohjeistaa käyttäjää reseptien listaamiseen.
