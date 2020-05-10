@@ -53,9 +53,11 @@ Esitetyn sivun ylempään tekstikenttään on tarkoitus syöttää reseptin nimi
 
 Reseptin saa viimein tallennettua painamalla oikeassa alakulmassa olevaa "**Save recipe**"-nappia. Mikäli samannimistä reseptiä on jo tallennettu, estää sovellus tallentamasta toisen samannimisen reseptin. Tällöin joutuu muokkaaman toisen reseptin nimeä, (ellei halua  poistaa ensimmäisen reseptin tai muokata sen nimeä).
 
-### Reseptien selaaminen, avaaminen, & lukeeminen
+### Reseptien selaaminen, avaaminen, & lukeminen
 
-Tallennettuja reseptejä voi selata joko aloitussivun reseptilistalla, tai reseptihaun tuloksilla. Kaikki näissä esiintyvät reseptit voidaan avata lukemista varten yksinkertaisesti painamalla reseptin nimeä listalta. Mikäli resepti on ainesosana toisessa reseptissä voi ainesosan resepti avata samoin, yksinkertaisesti painamalla sitä toisen reseptin aineslistalta.
+Tallennettuja reseptejä voi selata joko aloitussivun reseptilistalla, tai reseptihaun tuloksilla. Kaikki näissä esiintyvät reseptit voidaan avata lukemista varten yksinkertaisesti painamalla reseptin nimeä listalta. Mikäli resepti on ainesosana toisessa reseptissä voi ainesosan resepti avata samoin, yksinkertaisesti painamalla sitä toisen reseptin aineslistalta. Alla esimerkki reseptistä bechamel-kastikkeen valmistamiseen, josta voi avata reseptin rouxin valmistukseen:
+
+<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/bechamel.jpg">
 
 Aloitussivun reseptilista päivittyy reaaliaikaisesti kun reseptejä lisätään ja positetaan.
 
