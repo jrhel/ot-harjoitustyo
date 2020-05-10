@@ -50,8 +50,9 @@ The page for search results is similar to the home page, but without the menu on
 - User can delete recipes,
 - User can empty their recipe book/reset application
 - Application updates home screen on the fly as recipes are added and deleted,
-- Application warns user before resetting application;
-
+- Application warns user before resetting application,
+- Application doesn't delete an ingredient from the applications database when deleting a recipe, if another recipe uses given ingredient,
+- Application prevents user from saving multiple recipes with the same name.
 
 ## Restrictions on application
 
