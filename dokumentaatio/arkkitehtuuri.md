@@ -55,7 +55,11 @@ Ohjelma käytää pysyväistallentamiseen tietokantaa. Sovelluksen olennaisin lu
 
 Alla on kuvattu sovelluksen päätoiminnallisuuden toimintalogiikka sekvenssikaaviona:
 
-###
+### Reseptin lisääminen
+
+Kun käyttäjä painaa "add a new recipe", avautuu kyttöliittymän uusi ikkuna, ja kun käyttäjä lopulta painaa "Save recipe"- nappia, antaa käyttöliittymä tiedot sovellusloh´giikalle:
+
+<img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/new%20recipe%20logic.jpg">
 
 
 
