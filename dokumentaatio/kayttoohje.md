@@ -1,6 +1,6 @@
 # Käyttöohje
 
-Lataa tiedosto [otRecipeDatabase.jar](https://github.com/jrhel/ot-harjoitustyo/releases)
+Lataa tiedosto YourDigitalRecipeBook.jar](https://github.com/jrhel/ot-harjoitustyo/releases/tag/final)
 
 
 ## Konfigurointi
