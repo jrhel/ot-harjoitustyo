@@ -1,5 +1,5 @@
-# Reseptitietokanta
-Tämä on opiskeluprojekti kurssilla "Ohjelmistotekniikka" Helsingin yliopistolla. Lopputuloksena pitäisi olla sovellus jonka käyttäjäkokemus vastaa digitaalista reseptikirjaa, jossa käyttäjä omalla konellaan voi pitää kaikki suosikkireseptinsä sen sijaan että ne olisivat hajautettuna eri keittokirjoissa, ruokablogeissa, ja käyttäjän kansioissa.
+# Your Digital Recipe Book
+Tämä on opiskeluprojekti kurssilla "Ohjelmistotekniikka" Helsingin yliopistolla, jonka lopputulos on sovellus jonka käyttäjäkokemus vastaa digitaalista reseptikirjaa, jossa käyttäjä omalla konellaan voi pitää kaikki suosikkireseptinsä sen sijaan että ne olisivat hajautettuna eri keittokirjoissa, ruokablogeissa, ja käyttäjän omissa kansioissa/muistilapuilla jne.
 
 
 ## Dokumentaatio
