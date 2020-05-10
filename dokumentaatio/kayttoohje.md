@@ -36,7 +36,7 @@ Ensimmäisen, eli "**by name :**", alla on heti textikenttä. Painamalla "**by n
 
 Toisen napin, eli "**by ingredients :**", alla on useampi textikenttä. Painamalla "**by ingredients :**"-nappia on tarkoitus pystyä listamaan kaikki reseptit johon kuuluu tekstikenttiin syötettyjen merkkijonojen vastaavat ainekset. Esim. jos "**by ingredients :**"-napin allaolevista tekstikentistä on yhteen syötetty "jauhelihaa" ja toiseen "tomaatti", ja nämä kuuluvat tellennetuista resepteistä vain Lasagnan ja Ragun tekoon, niin pitäisi avata sivun jossa nämä kahdet reseptit ovat listattuna. Tämä toiminto ei kuitenkaan toimi vielä.
 
-Viimeinen nappi, eli "**Reset recipe book**", poistaa kaikki tallennetut reseptit ja asettaa sovelluksen alkutilaansa. (Tämä on hyödyllistä sovelluksen testammisessa, tai muuten vaan.) Alkutilassa, eli kun sovelluksen käynnistää ensimmäisen kerran, avaussivu näyttää tältä:
+Viimeinen nappi, eli "**Reset recipe book**", poistaa kaikki tallennetut reseptit ja asettaa sovelluksen alkutilaansa. (Tämä on hyödyllistä sovelluksen testammisessa, tai muuten vaan.) Jotta tämä oikeasti tapahtuisi, joutuu kuitenkin vahvistamaan valintansa, eli nappi ei tee sitä suoraan. Ainoastaan painamalla vielä seuraavaksi "**Yes**" restoidaan sovellus. Alkutilassa, eli kun sovelluksen käynnistää ensimmäisen kerran, avaussivu näyttää tältä:
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Tyhja%20avausnakyma.jpg">
 
