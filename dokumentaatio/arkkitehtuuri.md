@@ -51,3 +51,16 @@ Ohjelma käytää pysyväistallentamiseen tietokantaa. Sovelluksen olennaisin lu
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Database%20Diagram.jpg">
 
 
+## Päätoiminnallisuudet
+
+Alla on kuvattu sovelluksen päätoiminnallisuuden toimintalogiikka sekvenssikaaviona:
+
+###
+
+
+
+## Ohjelman rakenteeseen jääneet heikkoudet
+
+
+
+
