@@ -21,7 +21,7 @@ Sovellus käynnistyy avausnäkymään, jonka vasemmassa laidassa on valikko, jon
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Alustettu%20aloitusnakyma.jpg">
 
-Vasemmalla laidalla olevan valikon ylemmässä rivissä on nappi jonka painamalla pääsee lisäämään uuden reseptin. Tämä avaa lomakkeen, jota selitetään tarkemmin tämän käyttöohjeen seuraavassa osassa. Valikosta löytyy vielä napit "by name :", "by ingredients :", & "Reset recipe book". Ensimmäisen, eli "by name :", alla on heti textikenttä. Painamalla "by name :"-nappia listaa sovellus kaikki tallennetut reseptit jotak sisältävät sen textikentän painaushetkellä sisältämä merkkijono. Esim. tekstikentän syötteellä "*ag*" saisi nappia "by name :" painamalla avattua uuden näkymän jossa olisi yllä olevasta kuvasta vain "Las*ag*na" ja "R*ag*u" listattuna.
+Vasemmalla laidalla olevan valikon ylemmässä rivissä on nappi jonka painamalla pääsee lisäämään uuden reseptin. Tämä avaa lomakkeen, jota selitetään tarkemmin tämän käyttöohjeen seuraavassa osassa. Valikosta löytyy vielä napit "**by name :**", "**by ingredients :**", & "**Reset recipe book**". Ensimmäisen, eli "**by name :**", alla on heti textikenttä. Painamalla "**by name :**"-nappia listaa sovellus kaikki tallennetut reseptit jotak sisältävät sen textikentän painaushetkellä sisältämä merkkijono. Esim. tekstikentän syötteellä "*ag*" saisi nappia "**by name :**" painamalla avattua uuden näkymän jossa olisi yllä olevasta kuvasta vain "Las*ag*na" ja "R*ag*u" listattuna.
 
 ## Uuden reseptin luominen
 
