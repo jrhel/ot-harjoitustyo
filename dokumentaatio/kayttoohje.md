@@ -19,8 +19,7 @@ java -jar otRecipeDatabase-1.0-SNAPSHOT.jar
 
 ## Sovelluksen käyttöliittymä
 
-Sovelluksen käyttöliittymä on englanniksi.
-
+Sovelluksen käyttöliittymä on englanniksi. Sovellus avaa uusia "sivuja", kuten internetselain, mikä antaa käyttäjän pitäämään useita reseptejä, aloitussivun, sekä mahdolliset hakutulokset avoinna samaana aikaan, ja vielä tehdä muutakin - esim. etsiä lisätietoja internetistä. Käyttäjä voi sulkea suvuja kuten haluaa.
 
 ### Aloitussivu
 
