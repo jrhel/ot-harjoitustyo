@@ -15,6 +15,9 @@ Ohjelma käynnistetään komennolla
 java -jar otRecipeDatabase-1.0-SNAPSHOT.jar
 ```
 
+## Sovelluksen aloitussivu
+
+Sovellus käynnistyy avaussivuun, jossa 
 
 ## Uuden reseptin luominen
 
