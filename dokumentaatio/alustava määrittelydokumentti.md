@@ -21,7 +21,7 @@ which they themselves build up as they add to it over time.
 
 ## User interface
 
-The user interface consists of a home page, a page/form for adding ne recipies, a page for each recipe, and a page for searhc results. 
+The user interface implements a "browser"-like user experience, where significant operations open a new "page": All-in-all, the user interface consists of a home page, a page/form for adding ne recipies, a page for each recipe, and a page for searhc results. 
 The home page allows the user to e.g. browse recipies, add new ones, and search for old ones: 
 
 <img src="https://github.com/jrhel/ot-harjoitustyo/blob/master/dokumentaatio/illustrations/Alustettu%20aloitusnakyma.jpg">
