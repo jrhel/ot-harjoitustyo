@@ -19,6 +19,8 @@ Tämä on opiskeluprojekti kurssilla "Ohjelmistotekniikka" Helsingin yliopistoll
 
 [Viikko 6](https://github.com/jrhel/ot-harjoitustyo/releases/tag/viikko6)
 
+[loppupalautus](https://github.com/jrhel/ot-harjoitustyo/releases/tag/final)
+
 
 ## Komentorivitoiminnot
 
